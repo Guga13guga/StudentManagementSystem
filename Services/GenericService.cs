@@ -9,7 +9,7 @@ namespace StudentManagementSystem.Services;
 /// <typeparam name="T"></typeparam>
 public class GenericService <T> : IGenericService <T> where T : class 
 {
-    protected List<T> list;
+   internal List<T> list;
     private readonly string Url;
 
     public GenericService(string url)

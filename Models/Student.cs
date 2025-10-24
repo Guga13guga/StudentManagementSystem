@@ -1,20 +1,19 @@
-﻿
-
-using System.Security.AccessControl;
+﻿using StudentManagementSystem.Models.BaseModels;
 
 namespace StudentManagementSystem.Models;
 
-public class Student:BaseExtention
-{
-    
+/// <summary>
+/// Represents a student in the student management system.
+/// </summary>
+public class Student:Person
+{   
     public int Grade { get; set; }
+
     public Guid FacultyId { get; set; }
-    public string Surname { get; set; }
-    public string Email { get; set; }
-    public string Phone { get; set; }
 
-    public bool IsActive { get; set; }
+    public string? Surname { get; set; }
 
-    
-    
+    public string? Phone { get; set; }
+
+    public bool IsActive { get; set; } 
 }

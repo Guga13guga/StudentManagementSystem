@@ -1,6 +1,9 @@
-﻿
-namespace StudentManagementSystem.InterFaceses;
+﻿namespace StudentManagementSystem.InterFaceses;
 
+/// <summary>
+/// Generic Service Interface for CRUD operations
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public interface IGenericService <T> where T : class
 {
     void Add(T item);
@@ -16,5 +19,4 @@ public interface IGenericService <T> where T : class
     void Remove(int Index);
 
     List<T> GetAll();
-
 }

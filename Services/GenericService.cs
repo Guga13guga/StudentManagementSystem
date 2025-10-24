@@ -1,11 +1,12 @@
-﻿
-
-using StudentManagementSystem.InterFaceses;
-using System.Security.Cryptography.X509Certificates;
+﻿using StudentManagementSystem.InterFaceses;
 using System.Text.Json;
 
 namespace StudentManagementSystem.Services;
 
+/// <summary>
+/// Generic Service for CRUD operations
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class GenericService <T> : IGenericService <T> where T : class 
 {
     protected List<T> list;
@@ -20,7 +21,7 @@ public class GenericService <T> : IGenericService <T> where T : class
 
     public void Add(T item)
     {
-        this.list.Add(item);
+        list.Add(item);
         SaveChangesToFile();
     }
 
@@ -79,7 +80,6 @@ public class GenericService <T> : IGenericService <T> where T : class
         else
         {
             File.Create(Url).Close();
-
             var JsonContent = JsonSerializer.Serialize(list);
             if (JsonContent != null)
             {
